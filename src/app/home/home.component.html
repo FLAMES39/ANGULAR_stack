@@ -1,0 +1,43 @@
+<!-- <p>{{name}}</p> -->
+
+<!-- <input type="text" (input)="send($event)">
+
+<button [disabled]="!showbtn">PASSWORD</button> -->
+<!-- <br><br><br> -->
+<!-- <input type="text" [(ngModel)]="inputText">
+<p>{{inputText}}</p>
+<button [disabled]="!showbtn" >USERNAME</button> -->
+
+
+<!-- <input type="text" #input>
+<p>{{inputText}}</p>
+<button [disabled]="!showbtn" (click)="show()">USERNAME</button>  -->
+
+<input type="text" #name>
+<input type="text" #age>
+<button (click)="addUser(name.value,age.value)">ADD USER</button>
+<p *ngIf="users.length">list of users</p>
+
+<div *ngIf="users.length;else nouser">
+   <div *ngFor="let user of users, let i=index" >
+        <p>{{user.name}}</p>
+        <p [ngStyle]="{backgroundColor:user.age>18? 'green':'red'}"
+          [ngClass]="{overage:user.age>=18,underage:user.age<18}">{{user.age}}</p>
+        <button (click)="deleteUser(i)">DELETE</button>
+   </div>
+</div>
+<ng-template #nouser>
+     <p>NO USERS!!!</p>
+</ng-template>
+
+
+<div [ngSwitch]=" day">
+     <p *ngSwitchCase="1">Its Monday</p>
+     <p *ngSwitchCase="2">Its Tuesday</p>
+     <p *ngSwitchCase="3">Its Wednesday</p>
+     <p *ngSwitchCase="4">Its Thursday</p>
+     <p *ngSwitchCase="5">Its Friday</p>
+     <p *ngSwitchCase="6">Its Saturday</p>
+     <p *ngSwitchCase="7">Its Sunday</p>
+     <p *ngSwitchDefault>DEFAULT!</p>
+</div>

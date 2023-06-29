@@ -1,0 +1,13 @@
+<p *ngIf="users.length">list of users</p>
+
+<div *ngIf="users.length;else nouser">
+   <div *ngFor="let user of users, let i=index" >
+        <p>{{user.name}}</p>
+        <p [ngStyle]="{backgroundColor:user.age>18? 'green':'red'}"
+          [ngClass]="{overage:user.age>=18,underage:user.age<18}">{{user.age}}</p>
+        <button (click)="deleteUser(i)">DELETE</button>
+   </div>
+</div>
+<ng-template #nouser>
+     <p>NO USERS!!!</p>
+</ng-template>
