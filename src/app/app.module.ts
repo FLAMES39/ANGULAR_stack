@@ -7,13 +7,15 @@ import { HomeComponent } from './home/home.component';
 import { FormsModule } from '@angular/forms';
 import { AddStudentComponent } from './add-student/add-student.component';
 import { DisplayStudentComponent } from './display-student/display-student.component';
+import { shotPipe } from 'src/pipes/short';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     AddStudentComponent,
-    DisplayStudentComponent
+    DisplayStudentComponent,
+    shotPipe
   ],
   imports: [
     BrowserModule,

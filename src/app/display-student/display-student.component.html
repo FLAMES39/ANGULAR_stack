@@ -5,9 +5,16 @@
         <p>{{user.name}}</p>
         <p [ngStyle]="{backgroundColor:user.age>18? 'green':'red'}"
           [ngClass]="{overage:user.age>=18,underage:user.age<18}">{{user.age}}</p>
+          <p>{{user.description | short:20}}</p>
         <button (click)="deleteUser(i)">DELETE</button>
    </div>
 </div>
 <ng-template #nouser>
      <p>NO USERS!!!</p>
 </ng-template>
+
+<p>{{date |date:'shortDate'}}</p>
+<input type="date"[(ngModel)]="date">
+<p>{{price|currency:'KSH':'symbol':'4.2-2'}}</p>
+<p>{{p1 |number:'1.1-2'}}</p>
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam pariatur soluta veritatis exercitationem, tempore, quos, unde repudiandae cupiditate maxime fugiat facilis nobis quasi autem. Distinctio adipisci sint ad! Neque, quasi!
