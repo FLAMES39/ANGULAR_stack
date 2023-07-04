@@ -13,7 +13,7 @@
 <p>{{inputText}}</p>
 <button [disabled]="!showbtn" (click)="show()">USERNAME</button>  -->
 
-<input type="text" #name>
+<!-- <input type="text" #name>
 <input type="text" #age>
 <button (click)="addUser(name.value,age.value)">ADD USER</button>
 <p *ngIf="users.length">list of users</p>
@@ -40,4 +40,8 @@
      <p *ngSwitchCase="6">Its Saturday</p>
      <p *ngSwitchCase="7">Its Sunday</p>
      <p *ngSwitchDefault>DEFAULT!</p>
-</div>
+</div> -->
+<p>{{name}}</p>
+
+<ng-content></ng-content>
+<p #lorem>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consectetur quas aut illum nesciunt blanditiis, iste alias nam assumenda sunt tempore minus! Sit cupiditate deleniti facere praesentium in deserunt asperiores eius.</p>
