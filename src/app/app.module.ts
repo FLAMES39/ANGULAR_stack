@@ -8,6 +8,8 @@ import { FormsModule } from '@angular/forms';
 import { AddStudentComponent } from './add-student/add-student.component';
 import { DisplayStudentComponent } from './display-student/display-student.component';
 import { shotPipe } from 'src/pipes/short';
+import { AddproductComponent } from './addproduct/addproduct.component';
+import { DisplayproductComponent } from './displayproduct/displayproduct.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +17,9 @@ import { shotPipe } from 'src/pipes/short';
     HomeComponent,
     AddStudentComponent,
     DisplayStudentComponent,
-    shotPipe
+    shotPipe,
+    AddproductComponent,
+    DisplayproductComponent
   ],
   imports: [
     BrowserModule,
