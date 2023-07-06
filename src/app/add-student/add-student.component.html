@@ -1,3 +1,96 @@
-<input type="text" #name>
-<input type="text" #age>
-<button (click)="addUser(name.value,age.value)">ADD USER</button>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Example Form</title>
+  <style>
+    
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+    }
+
+    form {
+      max-width: 400px;
+      margin: 0 auto;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+
+    label {
+      display: block;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    textarea,
+    select {
+      width: 100%;
+      padding: 8px;
+      /* border: 1px solid #ccc;
+      border-radius: 4px; */
+      box-sizing: border-box;
+      margin-bottom: 10px;
+    }
+
+    textarea {
+      height: 100px;
+    }
+
+    input[type="submit"] {
+      background-color: #4CAF50;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #45a049;
+    }
+    button{
+        color: white;
+        background: green;
+        font-size:1rem;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    }
+  </style>
+</head>
+<body>
+  <form (ngSubmit)="onSubmit(form)" #form="ngForm">
+    <div ngModelGroup="personalDetails">
+        <label for="name">Name:</label>
+    <p class="error" *ngIf="!name.valid && name.touched">name is required</p>
+    <input type="text" id="name" ngModel name="name" required #name="ngModel">
+    
+    <label for="email">Email:</label>
+    <input type="email" id="email" ngModel name="email" required email #email="ngModel">
+    <p class="error" *ngIf="!email.valid && email.touched">email is required</p>
+    </div>
+    <label for="comments">Comments:</label>
+    <textarea id="comments" ngModel  name="comments" required></textarea>
+
+    <label for="languages">Languages:</label>
+    <select  id="languages" [ngModel]="'default'" name="languages" required  >
+      <option value="default">Select languages</option>
+      <option value="csharp">C#</option>
+      <option value="java">Java</option>
+      <option value="python">Python</option>
+    </select>
+
+   <div *ngFor="let Gender of Gender">
+    <input type="radio" [value]="Gender" ngModel name="gender" required>
+    <label for="gender">{{Gender}}</label>
+
+   </div>
+
+   <!-- [hidden]="!form.valid"  -->
+    <input type="submit" value="Submit" (click)="prepopulate()">
+    <button (click)="prepopulate1()">SOME INPUTS</button>
+  </form>
+</body>
+</html>

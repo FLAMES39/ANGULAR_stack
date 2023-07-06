@@ -1,1 +1,6 @@
-<p>addproduct works!</p>
+<input type="text" #name value="name">
+<input type="text" #image>
+<input type="text" #description>
+<input type="text" #price>
+<button (click)="addProduct(name.value,image.value,description.value,price.value)">ADD Product</button>
+

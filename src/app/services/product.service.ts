@@ -1,13 +1,7 @@
 import { Injectable } from '@angular/core';
+import { product } from '../interfaces';
 
 
-interface product{
-  id:number,
-  name:string,
-  image:string,
-  description:string,
-  price:number
-}
 
 
 @Injectable({
@@ -28,7 +22,7 @@ export class ProductService {
     {
       id:2,
       name:'keyboard',
-      image:'https://www.istockphoto.com/photos/mouse-animal',
+      image:'https://images.unsplash.com/photo-1612731427528-9980b4af1b46?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=726&q=80',
       description:'Lorem, ipsum dolor sit amet consectetur adipisicing elit',
       price:4000
 

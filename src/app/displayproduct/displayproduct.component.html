@@ -1,7 +1,15 @@
 <div>
-    <img src="https://media.istockphoto.com/id/492696926/photo/wood-mouse-on-root-of-tree.jpg?s=2048x2048&w=is&k=20&c=7c_JndsLR7YK90rCiG_l7j444fE8bC1O7NL112c7sDY=" alt="">
-    <h2>Computer_mouse</h2>
-    <h3>{{3000 |currency}}</h3>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique quidem necessitatibus labore, delectus iusto veritatis suscipit nostrum voluptatibus! Aperiam possimus culpa eius veritatis reiciendis corrupti rem nostrum aspernatur voluptate aut.</p>
-    
+    <div *ngIf="this.products.length; else noproducts">
+        <div *ngFor="let product of products">
+            <img src={{product.image}} alt="${this.product.productName}">
+            <h2>{{product.name}}</h2>
+            <h3>{{product.price |currency}}</h3>
+            <p>{{product.description | short:20}}</p>
+        </div>
+
+    </div>
+ <!-- <button (click)="deleteProduct(product.id)">delete</button>  -->
 </div>
+<ng-template #noproducts>
+    <p>NO PRODUCTS AVAILABLE!!!</p>
+</ng-template>

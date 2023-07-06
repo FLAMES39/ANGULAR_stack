@@ -10,6 +10,8 @@ import { DisplayStudentComponent } from './display-student/display-student.compo
 import { shotPipe } from 'src/pipes/short';
 import { AddproductComponent } from './addproduct/addproduct.component';
 import { DisplayproductComponent } from './displayproduct/displayproduct.component';
+import { AppBgDirective } from './directives/appDirective';
+import { SecondDirectiveDirective } from './directives/second-directive.directive';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { DisplayproductComponent } from './displayproduct/displayproduct.compone
     DisplayStudentComponent,
     shotPipe,
     AddproductComponent,
-    DisplayproductComponent
+    DisplayproductComponent,
+    AppBgDirective,
+    SecondDirectiveDirective
   ],
   imports: [
     BrowserModule,
