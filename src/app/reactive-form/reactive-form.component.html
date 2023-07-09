@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Example Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+        }
+
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 8px;
+            /* border: 1px solid #ccc;
+      border-radius: 4px; */
+            box-sizing: border-box;
+            margin-bottom: 10px;
+        }
+
+        textarea {
+            height: 100px;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        button {
+            color: white;
+            background: green;
+            font-size: 1rem;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+    </style>
+</head>
+
+<body>
+    <form (ngSubmit)="onSubmit()" [formGroup]="form">
+        <div formGroupName="personalDetails">
+            <label for="name">Name:</label>
+            <div class="error" *ngIf="!form.get('personalDetails.name')?.valid && form.get('personalDetails.name')?.touched">
+                
+                <p *ngIf="form.get('personalDetails.name')!.errors!['required']">name is required</p>
+               <p *ngIf="form.get('personalDetails.name')!.errors!['unAllowedName']">Username not allowed</p> 
+            </div>
+            <input type="text" id="name" formControlName="name">
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" formControlName="email">
+            <div class="error" *ngIf="!form.get('personalDetails.email')?.valid && form.get('personalDetails.email')?.touched">
+                <p *ngIf="form.get('personalDetails.email')!.errors!['required']">email is required</p>
+                <p *ngIf="form.get('personalDetails.email')!.errors!['emailUnallowed']">email is not allowed</p>
+
+            </div>
+            <label for="password">password:</label>
+            <input type="password" id="password" formControlName="password">
+            <p class="error" *ngIf="!form.get('personalDetails.password')?.valid && form.get('personalDetails.password')?.touched">password is required
+            </p>
+        </div>
+        <label for="comments">Comments:</label>
+        <textarea id="comments" formControlName="comments"></textarea>
+
+        <label for="languages">Languages:</label>
+        <select id="languages" formControlName="languages">
+            <option value="default">Select languages</option>
+            <option value="csharp">C#</option>
+            <option value="java">Java</option>
+            <option value="python">Python</option>
+        </select>
+        <div formArrayName="moreControls">
+            <p style="color:blue">Add Lnguages</p>
+            <button type="button" (click)="addLanguage()">ADD LANG</button>
+            <div *ngFor="let controls of getControls(); let i=index">
+                <input type="text" [formControlName]="i">
+                <input type="submit" (click)="removerControl(i)" value="Delete">
+            </div>
+        </div>
+
+        <div *ngFor="let Gender of Gender" class="radio">
+            <input type="radio" [value]="Gender" formControlName="Gender">
+            <label for="gender">{{Gender}}</label>
+
+        </div>
+        <div *ngFor="let opts of options" formArrayName="langOptions">
+            <input type="checkbox" [value]="opts" (change)="onchange($event)">
+            <label for="">{{opts}}</label>
+           
+        </div>
+        <input type="submit" value="CHECHKBOX" (onChange)="onchange($event)">
+
+        <!-- [hidden]="!form.valid"  -->
+        <input type="submit" value="Submit" (click)="prepopulate()">
+        <button (click)="prepopulate1()">SOME INPUTS</button>
+        <button type="submit" (click)="prepopulate()">WAAH</button>
+    </form>
+</body>
+
+</html>

@@ -82,7 +82,7 @@
       <option value="python">Python</option>
     </select>
 
-   <div *ngFor="let Gender of Gender">
+   <div *ngFor="let Gender of Gender"  class="radio">
     <input type="radio" [value]="Gender" ngModel name="gender" required>
     <label for="gender">{{Gender}}</label>
 

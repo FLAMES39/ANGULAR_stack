@@ -4,8 +4,3 @@ input.ng-invalid.ng-touched,select.ng-invalid.ng-touched,textarea.ng-invalid.ng-
 .error{
     color: red;
 }
-.radio{
-    display: flex;
-    gap:2px ;
-
-}
