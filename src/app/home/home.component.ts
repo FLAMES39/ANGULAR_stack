@@ -1,4 +1,5 @@
-import { AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit, Component, DoCheck, ElementRef, Input, OnChanges, OnDestroy, OnInit, SimpleChanges, ViewChild } from '@angular/core';
+import {  Component, DoCheck, ElementRef, Input, OnChanges, OnDestroy,  OnInit,  SimpleChanges, ViewChild } from '@angular/core';
+import { MovieServiceService } from '../services/movie-service.service';
 
 @Component({
   selector: 'app-home',
@@ -6,7 +7,7 @@ import { AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit,
   styleUrls: ['./home.component.css']
 
 })
-export class HomeComponent implements OnChanges, OnInit,DoCheck,AfterContentChecked,AfterContentInit,AfterViewInit,AfterViewChecked,OnDestroy{
+export class HomeComponent implements OnInit {
   // name:string='CHRISTIAN ABIODUN'
   // send(event:Event){
   //   let value= (event.target as HTMLInputElement).value
@@ -44,60 +45,66 @@ export class HomeComponent implements OnChanges, OnInit,DoCheck,AfterContentChec
 
 
 
-constructor(){
-  console.log('constructor logged');
+constructor( private movieservices:MovieServiceService){
+  
   
 }
-
-
-
-
-
-@Input({required:true}) name=""
-@ViewChild('title') title!:ElementRef
-@ViewChild('lorem') lorem!:ElementRef
-ngOnChanges(changes:SimpleChanges){
-  console.log('on changes called');
-  console.log(changes);
-  
+  ngOnInit(): void {
+   
+  }
+getMovies(){
+  this.movieservices.getmovie()
 }
-ngOnInit(){
-    console.log('on init called ');
+getCat(){
+  this.movieservices.getCategory()
+}
+
+// @Input({required:true}) name=""
+// @ViewChild('title') title!:ElementRef
+// @ViewChild('lorem') lorem!:ElementRef
+// ngOnChanges(changes:SimpleChanges){
+//   console.log('on changes called');
+//   console.log(changes);
+  
+// }
+// ngOnInit(){
+//     this.movieservices.getmovie()
  
     
     
-}
-ngDoCheck(): void {
-  console.log('ng dochek is running');
+// }
+// ngDoCheck(): void {
+//   console.log('ng dochek is running');
   
- }
- ngAfterContentInit(): void {
-  console.log('aftercontentinit executed');
+//  }
+//  ngAfterContentInit(): void {
+//   console.log('aftercontentinit executed');
   
 
   
-}
- ngAfterContentChecked(): void {
-   console.log('aftercontentchecked executed');
+// }
+//  ngAfterContentChecked(): void {
+//    console.log('aftercontentchecked executed');
    
- }
+//  }
 
- ngAfterViewInit(): void {
-  console.log("View init");
+//  ngAfterViewInit(): void {
+//   console.log("View init");
   
-  if(this.title){
-  console.log(this.title.nativeElement.textContext);
+//   if(this.title){
+//   console.log(this.title.nativeElement.textContext);
 
-  }
+//   }
   
-}
-ngAfterViewChecked(): void {
-  console.log("View checked");
+// }
+// ngAfterViewChecked(): void {
+//   console.log("View checked");
 
-}
-ngOnDestroy(): void {
-  console.log(' Destroyed');
+// }
+// ngOnDestroy(): void {
+//   console.log(' Destroyed');
   
-}
+// }
+
 
 }

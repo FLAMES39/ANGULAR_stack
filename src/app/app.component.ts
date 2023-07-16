@@ -1,4 +1,6 @@
 import { Component, EventEmitter } from '@angular/core';
+import { MovieServiceService } from './services/movie-service.service';
+import { AuthService } from './services/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -45,4 +47,10 @@ changename(){
 showbtn(){
   this.show=!this.show
 }
+constructor(public movieService:MovieServiceService,public authservice:AuthService){}
+// getMovies(){
+//   this.movieService.getmovie()
+// }
+
+
 }

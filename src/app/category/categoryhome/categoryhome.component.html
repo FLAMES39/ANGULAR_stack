@@ -1,0 +1,13 @@
+
+<h3>All MOVIES</h3>
+<div class="movies" *ngIf="this.movies.length; else noMovies" style="display: flex;justify-content: space-evenly;">
+    <div *ngFor="let movie of movies">
+        <h2>{{movie.category}}</h2>
+        <img src={{movie.image}} alt="" style="height: 10rem;width:10rem ;">
+        <p>{{movie.name}}</p>
+        <p>{{movie.price | currency}}</p>
+    </div>
+</div>
+<ng-template #noMovies>
+    <p>No Movies Available!!!</p>
+</ng-template>

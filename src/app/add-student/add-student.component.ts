@@ -23,6 +23,7 @@ export class AddStudentComponent{
   Gender=['Female','male', 'other']
   onSubmit(form:NgForm){
   this.form.resetForm()
+  
     
     
     

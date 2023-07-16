@@ -2,12 +2,25 @@
  <!-- <app-add-student></app-add-student> -->
 <!-- <app-display-student [users]="users"></app-display-student> -->
 <!-- <app-home [name]="savedName" *ngIf="show">
-   <h1 #title>ANGULAR FUN</h1>
+   <h1 title>ANGULAR FUN</h1>
 </app-home>
 <button (click)="showbtn()">Toggle</button>
 <button (click)="changename()">CHANGE</button> -->
 <!-- <app-addproduct></app-addproduct> -->
-<app-displayproduct></app-displayproduct>
+<!-- <app-displayproduct></app-displayproduct>
 <app-reactive-form></app-reactive-form>
 
-<p appSecondDirective [color]="'black'"[bg]="'blue'">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero sit omnis voluptatem, assumenda molestiae placeat minus repellat cumque corrupti est sed iusto animi quaerat eos nisi ea magnam pariatur ad.</p>
+<p appSecondDirective [color]="'black'"[bg]="'blue'">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero sit omnis voluptatem, assumenda molestiae placeat minus repellat cumque corrupti est sed iusto animi quaerat eos nisi ea magnam pariatur ad.</p> -->
+ <div class="container">
+   <div class="links">
+      <a routerLink="Category" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">HOME</a>
+      <a *ngIf="authservice.getStatus()" routerLink="one" routerLinkActive="active"[routerLinkActiveOptions]="{exact:true}">Category</a>
+      <a *ngIf="authservice.getStatus()"routerLink="movies" routerLinkActive="active">Add Movie</a>
+   </div>
+   <div class="links">
+      <a *ngIf="!authservice.getStatus()" (click)="authservice.login()">LOG-IN</a>
+      <a *ngIf="authservice.getStatus()" (click)="authservice.logOut()">LOG OUT</a>
+   </div>
+ </div>
+ <!-- <app-categoryhome></app-categoryhome> -->
+<router-outlet></router-outlet>

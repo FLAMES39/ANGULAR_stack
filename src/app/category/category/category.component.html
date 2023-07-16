@@ -1,0 +1,16 @@
+<p>category works!</p>
+
+<div class="container" >
+    <div class="sidebar">
+       <div *ngFor="let category of movieservice.getCategory() " routerLink="{{category}}">
+        <li >{{category}}</li>
+       </div>
+    </div>
+    <div class="content">
+        <!-- <img src="https://timesofindia.indiatimes.com/photo/96450680.cms" alt="">
+        <p>SISU</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum veniam facilis aliquid quo vitae quasi. Tenetur aliquid eaque nesciunt ipsam error ab odio, similique sint provident ad. In, debitis? Voluptatum.</p> -->
+            <router-outlet></router-outlet>
+
+    </div>
+</div>

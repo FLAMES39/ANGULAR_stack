@@ -1,3 +1,5 @@
+import { Observable } from "rxjs"
+
 export interface product{
     id:number,
     name:string,
@@ -6,3 +8,15 @@ export interface product{
     price:number
   }
   
+  export interface movie{
+    category: string
+    id:string,
+    name:string,
+    image:string,
+    price:number
+  }
+  export interface CanComponentDeactivate{
+    canDeactivate:()=> boolean | Observable<boolean > | Promise<boolean>; 
+   
+    
+  }

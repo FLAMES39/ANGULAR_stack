@@ -1,0 +1,20 @@
+.container{
+  display: flex;
+  gap: 20px;
+  padding: 10px;
+  margin: 5px;
+
+}
+.sidebar{
+  width: 20%;
+}
+.content{
+  width: 80%;
+  
+}
+li{
+  list-style: none;
+  padding: 5px 10px;
+  margin-top: 5px;
+  border: 2px solid black;
+}
