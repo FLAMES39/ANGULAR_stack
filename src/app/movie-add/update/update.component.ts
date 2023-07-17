@@ -1,6 +1,7 @@
+import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute, Params, Router } from '@angular/router';
+import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+import { ActivatedRoute, Params, Router, RouterModule } from '@angular/router';
 import { Observable } from 'rxjs';
 import { CanComponentDeactivate, movie } from 'src/app/interfaces';
 import { MovieServiceService } from 'src/app/services/movie-service.service';
@@ -8,7 +9,9 @@ import { MovieServiceService } from 'src/app/services/movie-service.service';
 @Component({
   selector: 'app-update',
   templateUrl: './update.component.html',
-  styleUrls: ['./update.component.css']
+  styleUrls: ['./update.component.css'],
+  standalone:true,
+  imports:[CommonModule,RouterModule,FormsModule,ReactiveFormsModule]
 })
 export class UpdateComponent implements OnInit, CanComponentDeactivate {
   form!: FormGroup;

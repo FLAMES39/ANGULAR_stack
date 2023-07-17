@@ -1,16 +1,20 @@
+import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Data, Params, Router } from '@angular/router';
+import { FormsModule } from '@angular/forms';
+import { ActivatedRoute, Data, Params, Router, RouterModule } from '@angular/router';
 import { movie } from 'src/app/interfaces';
 import { MovieServiceService } from 'src/app/services/movie-service.service';
 
 @Component({
   selector: 'app-singlecategory',
   templateUrl: './singlecategory.component.html',
-  styleUrls: ['./singlecategory.component.css']
+  styleUrls: ['./singlecategory.component.css'],
+  standalone:true,
+  imports:[CommonModule,RouterModule,FormsModule]
 })
 export class SinglecategoryComponent implements OnInit{
   movies:movie[]=[]
-  movieData:movie[]=[]
+ 
   constructor(public movieServices: MovieServiceService, private router:Router, private route: ActivatedRoute) { }
   ngOnInit(): void {
     // this.categories=(this.route.snapshot.params['Category'])

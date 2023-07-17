@@ -11,12 +11,11 @@ import { CategoryhomeComponent } from './categoryhome/categoryhome.component';
 import { SinglecategoryComponent } from './singlecategory/singlecategory.component';
 
 const routes:Routes=[
-  {path:'one',canActivateChild:[CanActivateService] ,component:CategoryComponent,children:[
+  {path:'',canActivateChild:[CanActivateService] ,component:CategoryComponent,children:[
     {path:':Category', resolve:{movieData:ResolverService} ,component:SinglecategoryComponent},
     {path:'describe/:id', component:MoviedetailsComponent},
     {path:'', component:CategoryhomeComponent},
     {path:'movie/update/:id',canDeactivate:[CanDeactivateService],component:UpdateComponent}
-
 
   ]}
 ]

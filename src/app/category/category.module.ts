@@ -13,17 +13,16 @@ import { UpdateComponent } from '../movie-add/update/update.component';
 
 @NgModule({
   declarations: [
-    CategoryComponent,
-    SinglecategoryComponent,
-    MoviedetailsComponent,
-    CategoryhomeComponent,
-    UpdateComponent
+    // CategoryComponent,
+    // SinglecategoryComponent,
+    // MoviedetailsComponent,
+    // CategoryhomeComponent,
+    // UpdateComponent
 
   ],
   imports: [
     CommonModule,
     CategoryRoutingModule,
-    BrowserModule,
     FormsModule,
     ReactiveFormsModule
   ]
