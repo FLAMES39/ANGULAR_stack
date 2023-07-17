@@ -50,7 +50,7 @@ export class UpdateComponent implements OnInit, CanComponentDeactivate {
       category: ['', [Validators.required]],
       prices: ['', [Validators.required]]
     });
-let movie=
+
     this.route.params.subscribe((p: Params) => {
       const movie = this.movieService.getMovieById(p['id']);
       this.movies = [movie];

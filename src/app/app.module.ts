@@ -22,6 +22,7 @@ import { NotfoundComponent } from './movie-add/notfound/notfound.component';
 import { UpdateComponent } from './movie-add/update/update.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { CanDeactivateService } from './services/can-deactivate.service';
+import { CategoryModule } from './category/category.module';
 
 
 
@@ -39,19 +40,15 @@ import { CanDeactivateService } from './services/can-deactivate.service';
     AppBgDirective,
     SecondDirectiveDirective,
     ReactiveFormComponent,
-    CategoryComponent,
-    SinglecategoryComponent,
-    CategoryhomeComponent,
     MovieAddComponent,
-    MoviedetailsComponent,
     NotfoundComponent,
-    UpdateComponent,
     NotFoundComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
+    CategoryModule,
     AppRoutingModule
   ],
   providers: [],
