@@ -1,0 +1,16 @@
+*{
+    margin: 30px;
+}
+button{
+    padding: 10px;
+    background-color: blueviolet;
+    border: 2px ;
+
+}
+li{
+    width: 300px;
+    list-style: none;
+    border: 2px solid black;
+    padding: 8px 8px;
+    margin: 5px;
+}

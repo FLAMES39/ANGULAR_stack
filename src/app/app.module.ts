@@ -11,37 +11,42 @@ import { DisplayproductComponent } from './displayproduct/displayproduct.compone
 import { AppBgDirective } from './directives/appDirective';
 import { SecondDirectiveDirective } from './directives/second-directive.directive';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
-import { MovieAddComponent } from './movie-add/movie-add.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations'
 import { AppRoutingModule } from './app-routing.module';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { CategoryModule } from './category/category.module';
+import { SubjectComponent } from './subject/subject.component';
+import { Subject2Component } from './subject2/subject2.component';
 
 
 
 
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    HomeComponent,
-    AddStudentComponent,
-    DisplayStudentComponent,
-    shotPipe,
-    AddproductComponent,
-    DisplayproductComponent,
-    AppBgDirective,
-    SecondDirectiveDirective,
-    ReactiveFormComponent,
-    
-    NotFoundComponent
-  ],
-  imports: [
-    BrowserModule,
-    FormsModule,
-    ReactiveFormsModule,
-    AppRoutingModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        AddStudentComponent,
+        DisplayStudentComponent,
+        shotPipe,
+        AddproductComponent,
+        DisplayproductComponent,
+        AppBgDirective,
+        SecondDirectiveDirective,
+        ReactiveFormComponent,
+        // SubjectComponent,
+        // Subject2Component,
+        NotFoundComponent
+    ],
+    providers: [],
+    bootstrap: [AppComponent],
+    imports: [
+        BrowserModule,
+        FormsModule,
+        ReactiveFormsModule,
+        AppRoutingModule,
+        Subject2Component,
+        SubjectComponent,
+        BrowserAnimationsModule
+    ]
 })
 export class AppModule { }

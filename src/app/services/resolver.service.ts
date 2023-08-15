@@ -15,3 +15,4 @@ export class ResolverService implements Resolve<movie[]>{
     return this.movieservice.getMovieCategory(route.params['Category']);
   }
 }
+

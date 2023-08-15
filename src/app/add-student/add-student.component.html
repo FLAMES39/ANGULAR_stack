@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <title>Example Form</title>
   <style>
-    
     body {
       font-family: Arial, sans-serif;
       background-color: #f2f2f2;
@@ -52,45 +52,48 @@
     input[type="submit"]:hover {
       background-color: #45a049;
     }
-    button{
-        color: white;
-        background: green;
-        font-size:1rem;
-        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+    button {
+      color: white;
+      background: green;
+      font-size: 1rem;
+      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     }
   </style>
 </head>
+
 <body>
   <form (ngSubmit)="onSubmit(form)" #form="ngForm">
     <div ngModelGroup="personalDetails">
-        <label for="name">Name:</label>
-    <p class="error" *ngIf="!name.valid && name.touched">name is required</p>
-    <input type="text" id="name" ngModel name="name" required #name="ngModel">
-    
-    <label for="email">Email:</label>
-    <input type="email" id="email" ngModel name="email" required email #email="ngModel">
-    <p class="error" *ngIf="!email.valid && email.touched">email is required</p>
+      <label for="name">Name:</label>
+      <p class="error" *ngIf="!name.valid && name.touched">name is required</p>
+      <input type="text" id="name" ngModel name="name" required #name="ngModel">
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" ngModel name="email" required email #email="ngModel">
+      <p class="error" *ngIf="!email.valid && email.touched">email is required</p>
     </div>
     <label for="comments">Comments:</label>
-    <textarea id="comments" ngModel  name="comments" required></textarea>
+    <textarea id="comments" ngModel name="comments" required></textarea>
 
     <label for="languages">Languages:</label>
-    <select  id="languages" [ngModel]="'default'" name="languages" required  >
+    <select id="languages" [ngModel]="'default'" name="languages" required>
       <option value="default">Select languages</option>
       <option value="csharp">C#</option>
       <option value="java">Java</option>
       <option value="python">Python</option>
     </select>
 
-   <div *ngFor="let Gender of Gender"  class="radio">
-    <input type="radio" [value]="Gender" ngModel name="gender" required>
-    <label for="gender">{{Gender}}</label>
+    <div *ngFor="let Gender of Gender" class="radio">
+      <input type="radio" [value]="Gender" ngModel name="gender" required>
+      <label for="gender">{{Gender}}</label>
 
-   </div>
+    </div>
 
-   <!-- [hidden]="!form.valid"  -->
+    <!-- [hidden]="!form.valid"  -->
     <input type="submit" value="Submit" (click)="prepopulate()">
     <button (click)="prepopulate1()">SOME INPUTS</button>
   </form>
 </body>
+
 </html>

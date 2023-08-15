@@ -25,7 +25,6 @@ export class SinglecategoryComponent implements OnInit{
 this.route.data.subscribe((data:Data)=>{
   this.movies=data['movieData']
 
-  
 })
   }
 

@@ -11,6 +11,10 @@
 <app-reactive-form></app-reactive-form>
 
 <p appSecondDirective [color]="'black'"[bg]="'blue'">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero sit omnis voluptatem, assumenda molestiae placeat minus repellat cumque corrupti est sed iusto animi quaerat eos nisi ea magnam pariatur ad.</p> -->
+
+
+
+
  <div class="container">
    <div class="links">
       <a routerLink="Category" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">HOME</a>
@@ -22,5 +26,8 @@
       <a *ngIf="authservice.getStatus()" (click)="authservice.logOut()">LOG OUT</a>
    </div>
  </div>
- <!-- <app-categoryhome></app-categoryhome> -->
+
 <router-outlet></router-outlet>
+
+<app-subject></app-subject>
+<app-subject2></app-subject2>

@@ -1,10 +1,13 @@
 import {  Component, DoCheck, ElementRef, Input, OnChanges, OnDestroy,  OnInit,  SimpleChanges, ViewChild } from '@angular/core';
 import { MovieServiceService } from '../services/movie-service.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: ['./home.component.css'],
+  standalone:true,
+  imports:[CommonModule]
 
 })
 export class HomeComponent implements OnInit {
@@ -45,19 +48,19 @@ export class HomeComponent implements OnInit {
 
 
 
-constructor( private movieservices:MovieServiceService){
+// constructor( private movieservices:MovieServiceService){
   
   
-}
+// }
   ngOnInit(): void {
    
   }
-getMovies(){
-  this.movieservices.getmovie()
-}
-getCat(){
-  this.movieservices.getCategory()
-}
+// getMovies(){
+//   this.movieservices.getmovie()
+// }
+// getCat(){
+//   this.movieservices.getCategory()
+// }
 
 // @Input({required:true}) name=""
 // @ViewChild('title') title!:ElementRef

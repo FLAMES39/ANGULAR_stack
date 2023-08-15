@@ -25,27 +25,6 @@ export class UpdateComponent implements OnInit, CanComponentDeactivate {
     private movieService: MovieServiceService
   ) {}
 
-  canDeactivate(): boolean | Promise<boolean> | Observable<boolean> {
-    // console.log("Name: ", this.form.get('name')?.valu);
-    // console.log("Category: ", this.form.value.category);
-    // console.log("Prices: ", this.form.value.prices);
-    
-    if (
-      (this.form.value.name === this.form.get('name')?.value ||
-        this.form.value.category === this.form.get('category')?.value ||
-        this.form.value.prices === this.form.get('prices')?.value) &&
-      !this.isUpdateClicked
-    ) {
-      return confirm("Do you want to discard changes?");
-    } else {
-      return true;
-    }
-    
-  }
-  
-  
-
-  
 
   ngOnInit(): void {
     this.form = this.fb.group({
@@ -64,6 +43,24 @@ export class UpdateComponent implements OnInit, CanComponentDeactivate {
         category: movie.category
       });
     });
+  }
+
+  canDeactivate(): boolean | Promise<boolean> | Observable<boolean> {
+    // console.log("Name: ", this.form.get('name')?.valu);
+    // console.log("Category: ", this.form.value.category);
+    // console.log("Prices: ", this.form.value.prices);
+    
+    if (
+      (this.form.value.name === this.form.get('name')?.value ||
+        this.form.value.category === this.form.get('category')?.value ||
+        this.form.value.prices === this.form.get('prices')?.value) &&
+      !this.isUpdateClicked
+    ) {
+      return confirm("Do you want to discard changes?");
+    } else {
+      return true;
+    }
+    
   }
 
   onSubmit() {
